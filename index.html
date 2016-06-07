@@ -28,6 +28,43 @@
 </head>
 
 <body id="page-top" ng-controller="MainCtrl as vm">
+    <div class="container">
+        <div class="modal fade" id="privacyModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Privacy Policy</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Fixmyloan.net offers this privacy policy (the “Policy”) to demonstrate policies with relation to privacy. This Policy discloses our practices for our Website’s information gathering and dissemination. YOUR IP ADDRESS Pursuant to our Policy, we use your IP address to help diagnose problems with our server, and to administer our Website. Your IP address is used to gather broad demographic information. This site automatically collects other information such as browser type, platform, and connection speed. LINKS Our Website contains links to other sites. Fixmyloan.net is not responsible for the privacy practices or the content of such Websites. CUSTOMER INFORMATION Our online inquiry forms may solicit visitors to voluntarily provide contact information such as name, email address, phone number, and mailing address and demographic information such as age and how you learned about us. Pursuant to our Policy, we use this contact data to facilitate communications with visitors. The customer’s contact information may be also used to contact the visitor regarding their specific request or to send administrative notices regarding their use of the site; users may opt-out of receiving future mailings. Demographic and profile data may be collected at our Website. We use this data to tailor our visitor’s experience at our Website, showing them content that we think they might be interested in, and displaying the content according to their preferences. By submitting your personal information; inclusive of your first and last name, your home or other physical address, including street name and name of a city or town, your e-mail address, your telephone number, your, social security number any other identifier that permits the physical or online contacting of a specific individual as set forth in Cal. Bus. & Prof. Code Section 22575, et seq., and specifically, Section 22577; and any ads, content, photos, data or other information provided to the Site (hereafter the “Information”), you hereby grant to Fixmyloan.net and its Affiliates a royalty-free, perpetual, irrevocable, nonexclusive, fully transferable, fully sub-licensable right and license to copy, modify, display, distribute, perform, create derivative works from, and otherwise use and exploit all such Information in any form, media, software or technology of any kind now existing or developed in the future. You further grant to Fixmyloan.net and its Affiliates a royalty-free right and license to use your name, image and likeness in connection with the reproduction or distribution of the Information. A. Categories of Information Collected We collect Information about you including Information from your application or other forms, such as your name, address, email address, phone number, social security number, assets, income, and all information pertaining to your vehicle, information about your transactions with us, our affiliates or others, such as your loan information, vehicle information, premiums, payment history and interest rate; and information from consumer reporting agencies, such as your credit history. We collect personal information about you from applications or other forms you complete, your business dealings with us and other companies, and consumer reporting agencies. B. Categories of Information Disclosed We may disclose the following personal information about you including information from your application or other forms, such as your name, address, email address, phone number, social security number, assets, income, and all information pertaining to your vehicle, information about your transactions with us, our affiliates or others, such as your loan information, vehicle information, premiums, payment history and interest rate; and information from consumer reporting agencies, such as your credit history. C. Process for an Individual Consumer Who Uses or Visits fixmyloan.net to Review and Request Changes to any Information To review or request changes to your personal information, please email your request to optout@fixmyloan.net. D. Web Browser “Do Not Track” Signals or Other Mechanisms That Provide Consumers the Ability to Exercise Choice Regarding the Collection Of Personally Identifiable Information Our website will utilize any software, hardware, code or any other method to ensure or attempt to ensure that fixmyloan.net can collect as much information about you as possible. We may disclose all the information that we collect about you to any third party. The law allows the sharing of your financial information with our affiliates to market products or services to you. You cannot prevent those disclosures. SECURITY This site has instituted security measures to protect the loss, misuse and alteration of the information under our control. However, in no manner can fixmyloan.net guarantee the security of your information. COOKIES Fixmyloan.net uses cookies exclusively for session maintenance when a user completes the online application section. DISCLAIMER We may disclose personal information when required by law or in the good-faith belief that such action is necessary in order to conform to the edicts of the law or comply with a legal process served on our Website. NOTIFICATION OF CHANGES Changes may be made to our privacy policy at any time without notification to you, and for any reason. By agreeing to the terms set forth herein, you expressly agree to waive any notice of privacy policy changes. CONTACTING THE WEBSITE If you have any questions about this privacy statement, the practices of this site, or your dealings with this Website, you can contact us via email at optout@fixmyloan.net.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="termsModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -78,7 +115,24 @@
                 </div>
                 <div class="container col-xs-6 col-xs-offset-3">
                     <br>
-                    <p id="privacyContent">By providing your information, you certify that you have read and agree to our <a href="">Privacy Policy</a> and <a href="">Terms of Website Use</a>. See Rates and Fees. Questions? <a href="">FAQ</a> or <a href="">Contact Us.</a></p>
+                    <p id="privacyContent">By providing your information, you certify that you have read and agree to our <a data-toggle="modal" data-target="#privacyModal">Privacy Policy</a> and <a data-toggle="modal" data-target="#termsModal">Terms of Website Use</a>. See Rates and Fees. Questions? <a href="">FAQ</a> or <a href="">Contact Us.</a></p>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Some text in the modal.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,79 +153,9 @@
                 <div id="commonQuestions" class="col-xs-5 text-center">
                     <h2 class="section-heading">We've got what you need!</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <h3>Ready to Begin</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
-            </div>
-        </div>
-    </aside>
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                <div id="readyToBegin" class="col-xs-7 text-center">
+                    <h2 class="section-heading">Ready To Begin?</h2>
+                    <button id="applyNowButton" ng-click="vm.test()" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                 </div>
             </div>
         </div>
