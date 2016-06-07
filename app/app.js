@@ -4,7 +4,10 @@
     // define top-level module container
     var app = angular.module('app', []);
 
-    // additional configuration goes here
+    $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').focus()
+        })
+        // additional configuration goes here
 
 
 })();

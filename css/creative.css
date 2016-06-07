@@ -468,17 +468,9 @@ body {
     font-size: .7em;
 }
 
-#autoManf {
-    padding: 0;
-}
-
-#creditBar {
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-
-#aboutAndCommonQuestions {
+section {
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #about {
@@ -490,9 +482,18 @@ body {
 }
 
 #readyToBegin {
+<<<<<<< HEAD
     padding:20px;
 }
 
 a {
     cursor:pointer;
 }
+=======
+    padding:50px;
+}
+
+#banks {
+    background-image: url("../img/banks.png");
+} 
+>>>>>>> 9a87fae04dbbe3af34105859e5de76292e2f71ab
