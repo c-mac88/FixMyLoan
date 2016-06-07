@@ -82,16 +82,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">How It Works</a>
+                        <a class="page-scroll" href="#howItWorks">How It Works</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Common Questions</a>
+                        <a class="page-scroll" href="#commonQuestions">Common Questions</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">About</a>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Apply Now</a>
+                        <a class="page-scroll" href="#readyToBegin">Apply Now</a>
                     </li>
                 </ul>
             </div>
@@ -124,30 +124,88 @@
         <div id="autoManf" class="container"><img height="150px" src="img/auto.png"></div>
     </section>
     <section>
-        <img src="img/creditBar.png">
+        <div class="col col-xs-12">
+            <div id="creditPanel" class="row">
+                <div class="col col-xs-4">
+                    <h4>
+                <span class="glyphicon glyphicon-check"></span>
+                All Credit Types Welcome - Good, Bad, or None
+                </h4>
+                </div>
+                <div class="col col-xs-4">
+                    <h4>
+                <span class="glyphicon glyphicon-check"></span>
+                Rates As Low As 0%
+                </h4>
+                </div>
+                <div class="col col-xs-4">
+                    <h4>
+                <span class="glyphicon glyphicon-check"></span>
+                We work with Most Major Local and Nationwide Lenders
+                </div>
+                </h4>
+                </div>
+            </div>
     </section>
     <section>
         <div class="container">
             <div class="row">
-                <div id="about" class="col-xs-7 text-center">
-                    <h2 class="section-heading">About FixMyLoan<sup>&#174</sup></h2>
-                    <p>A FixMyLoan<sup>&#174</sup>, we're dedicated to helping people find an auto loan that best fits their current financial and credit situation. Many people have auto loans that may have been suitable when they first purchased their vehicle, but now their credit warrants a better loan. We are here to fix it. Since 2014, we've helped thousands of people fix their loan and get the loan they deserve.</p>
-                </div>
-                <div id="commonQuestions" class="col-xs-5 text-center">
-                    <div class="panel panel-default">
-                        <h4>Frequently Asked Questions</h4>
-                        <div id="FAQbody" ng-repeat="Q in vm.FAQ" class="panel-body text-left">
-                            <p ng-click="Q.showing=!Q.showing" ng-click><span class="glyphicon glyphicon-plus"></span><b>{{Q.question}}</b></p>
-                            <p ng-show="Q.showing">{{Q.answer}}</p>
+                <div class="col col-xs-6">
+                    <div id="reviewsPicture" class="col-xs-12 text-center">
+                        <h3 class="section-heading">Absolute professionals and genuine folks. Lifesavers.</h3>
+                        <p>-MJ</p>
+                    </div>
+                    <div id="reviews" class="col-xs-12 text-center">
+                        <h4>What our customers are saying on Google+<sup>&#174</sup>:</h4>
+                        <div id="reviewsBody" ng-repeat="review in vm.reviews" class="panel-body text-center">
+                            <h4><b>{{review.title}}</b></h4>
+                            <p>{{review.text}}</p>
+                            <p>-{{review.name}}</p>
                         </div>
                     </div>
                 </div>
-                <div id="readyToBegin" class="col-xs-7 text-center">
-                    <h2 class="section-heading">Ready To Begin?</h2>
-                    <button id="applyNowButton" ng-click="vm.test()" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
+                <div class="col-xs-6">
+                    <div id="howItWorks" class="col col-xs-12">
+                        <h3>How it Works</h3>
+                        <div class="row">
+                            <div id="howItWorksNumber" class="col-xs-1">1.</div>
+                            <h4 class="col-xs-11"><b>Submit Your Secure Application</b><br>
+                                            We'll ask you a few questions in order to gage your current auto loan status
+                                            </h4>
+                        </div>
+                        <div class="row">
+                            <div id="howItWorksNumber" class="col-xs-1">2.</div>
+                            <h4 class="col-xs-11"><b>A representative will call you to schedule an appointment</b><br>
+                                            Our credit specialists are the BEST in the industry
+                                            </h4>
+                        </div>
+                        <div class="row">
+                            <div id="howItWorksNumber" class="col-xs-1">3.</div>
+                            <h4 class="col-xs-11"><b>Come visit us at a live event near you</b><br>
+                                            Our loan specialists will be on hand to fix your loan and save you money
+                                            </h4>
+                        </div>
+                    </div>
+                    <div id="commonQuestions" class="col-xs-12">
+                        <h3>Frequently Asked Questions</h3>
+                        <div id="FAQbody" ng-repeat="Q in vm.FAQ" class="panel-body text-left">
+                            <p ng-click="Q.showing=!Q.showing" ng-click><span class="glyphicon glyphicon-chevron-down"></span><b>{{Q.question}}</b></p>
+                            <p ng-show="Q.showing">{{Q.answer}}</p>
+                        </div>
+                    </div>
+                    <div id="about" class="col-xs-12 text-center">
+                        <h2 class="section-heading">About FixMyLoan<sup>&#174</sup></h2>
+                        <p>A FixMyLoan<sup>&#174</sup>, we're dedicated to helping people find an auto loan that best fits their current financial and credit situation. Many people have auto loans that may have been suitable when they first purchased their vehicle, but now their credit warrants a better loan. We are here to fix it. Since 2014, we've helped thousands of people fix their loan and get the loan they deserve.</p>
+                    </div>
+                    <div id="readyToBegin" class="col-xs-12 text-center">
+                        <h2 class="section-heading">Ready To Begin?</h2>
+                        <button id="applyNowButton" ng-click="vm.test()" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section>
     </section>
     <section>
         <div class="container col-xs-12">

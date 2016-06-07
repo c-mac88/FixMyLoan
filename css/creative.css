@@ -469,14 +469,22 @@ body {
 }
 
 section {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 #about {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/about.jpg);
-    padding: 100px;
+    padding: 50px;
     background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#reviewsPicture {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/review.jpg);
+    padding: 100px;
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
@@ -498,5 +506,27 @@ a {
 
 #FAQbody {
     cursor:pointer;
+    padding:0;
 }
 
+#creditPanel {
+    margin: 15px;
+}
+
+#creditPanel {
+    padding:0px;
+}
+
+#howItWorksNumber {
+    border: solid blue 2px round;
+}
+
+#howItWorks h3 {
+    text-align: center;
+    padding:10px;
+}
+
+#commonQuestions h3 {
+    text-align: center;
+    padding:10px;
+}
