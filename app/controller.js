@@ -18,5 +18,10 @@
         }
 
 
+        vm.FAQ = [{"question": "Does it cost anything to apply?", "answer": "No. there is no cost to apply.", "showing": false},
+                    {"question": "Test", "answer": "Test", "showing": false}
+        ]
+
+
     }
 })();

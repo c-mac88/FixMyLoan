@@ -482,18 +482,21 @@ section {
 }
 
 #readyToBegin {
-<<<<<<< HEAD
     padding:20px;
 }
 
 a {
     cursor:pointer;
 }
-=======
+
     padding:50px;
 }
 
 #banks {
     background-image: url("../img/banks.png");
 } 
->>>>>>> 9a87fae04dbbe3af34105859e5de76292e2f71ab
+
+#FAQbody {
+    cursor:pointer;
+}
+
