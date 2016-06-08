@@ -181,7 +181,7 @@
                         <a class="page-scroll" href="#meetTheTeam">Meet The Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#readyToBegin">Apply Now</a>
+                        <a id="ApplyNowTopRight" class="page-scroll" href="#readyToBegin">Apply Now</a>
                     </li>
                 </ul>
             </div>
@@ -193,7 +193,7 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="col col-xs-12">
-                    <div id="LOGO" class="container col-xs-4 col-xs-offset-4">
+                    <div id="LOGO" class="container col-sm-12 col-md-4 col-md-offset-4">
                     </div>
                 </div>
                 <h2>Stop over-paying for your car!</h2>
@@ -201,14 +201,14 @@
                 <button id="applyNowButton" a data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                 <p>Fast | Secure | $0 to Apply</p>
                 <h4>Contact us at <u>800-769-7175</u></h4>
-                <div class="col-xs-4 col-xs-offset-4">
+                <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
                     <div class="row">
                         <div id="mcafee" class="col-xs-4"></div>
                         <div id="norton" class="col-xs-4"></div>
                         <div id="truste" class="col-xs-4"></div>
                     </div>
                 </div>
-                <div class="container col-xs-6 col-xs-offset-3">
+                <div class="container col-xs-12 col-md-6 col-md-offset-3">
                     <br>
                     <p id="privacyContent">By providing your information, you certify that you have read and agree to our <a data-toggle="modal" data-target="#privacyModal">Privacy Policy</a> and <a data-toggle="modal" data-target="#termsModal">Terms of Website Use</a>. See Rates and Fees. Questions? <a href="#commonQuestions">FAQ</a> or <a href="">Contact Us.</a></p>
                 </div>
@@ -216,34 +216,26 @@
         </div>
     </header>
     <section id="autoLogos">
-        <div id="auto" class="row">
-            <div class="container col-xs-11 col-xs-offset-1">
-                <div ng-repeat="auto in vm.autos1" class="container col-xs-1"><img height="80px" src="img/{{auto}}"></div>
-            </div>
-            <div class="container col-xs-11 col-xs-offset-1">
-                <div ng-repeat="auto in vm.autos2" class="container col-xs-1"><img height="80px" src="img/{{auto}}"></div>
-            </div>
-            <div class="container col-xs-11 col-xs-offset-1">
-                <div ng-repeat="auto in vm.autos3" class="container col-xs-1"><img height="80px" src="img/{{auto}}"></div>
-            </div>
+        <div class="row">
+            <div ng-repeat="auto in vm.autos" class="container col-xs-2 col-md-1"><img height="80px" src="img/{{auto}}"></div>
         </div>
     </section>
     <section>
-        <div class="col col-xs-10 col-xs-offset-1">
+        <div class="col col-sm-12 col-md-10 col-md-offset-1">
             <div id="creditPanel" class="row">
-                <div class="col col-xs-4 text-center">
+                <div class="col col-sm-12 col-md-4 text-center">
                     <h4>
                 <span class="glyphicon glyphicon-check"></span>
                 All Credit Types Welcome - Good, Bad, or None
                 </h4>
                 </div>
-                <div class="col col-xs-4 text-center">
+                <div class="col col-sm-12 col-md-4 text-center">
                     <h4>
                 <span class="glyphicon glyphicon-check"></span>
                 Rates As Low As 0%
                 </h4>
                 </div>
-                <div class="col col-xs-4 text-center">
+                <div class="col col-sm-12 col-md-4 text-center">
                     <h4>
                 <span class="glyphicon glyphicon-check"></span>
                 We work with Most Major Local and Nationwide Lenders
@@ -255,7 +247,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col col-xs-6">
+                <div class="col col-sm-12 col-md-6">
                     <div id="reviewsPicture" class="col-xs-12 text-center">
                         <h3 class="section-heading">"Absolute professionals and genuine folks. Lifesavers."</h3>
                         <p>-MJ</p>
@@ -269,7 +261,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-sm-12 col-md-6">
                     <div id="howItWorks" class="col col-xs-12">
                         <h3>How it Works</h3>
                         <div class="row">
@@ -292,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                <div class="col col-sm-12 col-md-6">
                     <div id="commonQuestions" class="col-xs-12">
                         <h3>Frequently Asked Questions</h3>
                         <div id="FAQbody" ng-repeat="Q in vm.FAQ" class="panel-body text-left">
@@ -301,7 +293,7 @@
                         </div>
                     </div>
                     <div id="about" class="col-xs-12 text-center">
-                        <h2 class="section-heading">About FixMyLoan<sup>&#174</sup></h2>
+                        <h3 class="section-heading">About FixMyLoan<sup>&#174</sup></h3>
                         <p>A FixMyLoan<sup>&#174</sup>, we're dedicated to helping people find an auto loan that best fits their current financial and credit situation. Many people have auto loans that may have been suitable when they first purchased their vehicle, but now their credit warrants a better loan. We are here to fix it. Since 2014, we've helped thousands of people fix their loan and get the loan they deserve.</p>
                     </div>
                     <div id="readyToBegin" class="col-xs-12 text-center">
@@ -353,8 +345,7 @@
         </div>
     </section> -->
     <section>
-        <div class="container col-xs-12">
-            <img src="img/banks.png">
+        <div id="banks" class="container col-xs-12">
         </div>
     </section>
     <section>

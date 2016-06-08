@@ -510,7 +510,8 @@ padding:50px;
 }
 #creditPanel {
     margin: 15px 15px 30px 15px;
-    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 #creditPanel h4 {
     opacity: .9;
@@ -563,12 +564,12 @@ padding:50px;
     background-repeat: no-repeat;
     background-position: center;
 }
-#autoLogos {
-    background-color: rgba(0, 0, 0, 0.1);
+#autoLogoRow {
+    text-align: center;
 }
 #reviews {
     background-color: rgba(76, 175, 80, 0.85);
-    height: 750px;
+    height: 1000px;
     overflow: scroll;
 }
 #reviews h4 {
@@ -579,6 +580,9 @@ padding:50px;
 }
 #howItWorks h3 {
     color: #4caf50;
+}
+#howItWorks .row {
+    margin-bottom: 15px;
 }
 #commonQuestions h3 {
     color: #4caf50;
@@ -598,23 +602,34 @@ padding:50px;
     color: rgba(0, 0, 0, 0.6);
     padding: 10px;
 }
-#bottomPanel img{
+#bottomPanel img {
     size: contain;
 }
-
 #bottomPanel {
-    padding:0;
+    padding: 0;
 }
-
 #registrationModal {
     margin-top: 5%;
 }
-
 #registrationModal .modal-content {
     background-color: rgba(0, 0, 0, 0.0);
-    color:white;
+    color: white;
 }
-
 #registrationModal .modal-body {
     background-color: rgba(0, 0, 0, 0.0);
+}
+#ApplyNowTopRight {
+    color: #4caf50;
+}
+#about {
+    text-align: left;
+}
+#banks {
+    background-image: url(../img/banks.png);
+    padding: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#autoLogos {
+    background-color: rgba(0, 0, 0, 0.1);
 }
