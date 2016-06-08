@@ -37,7 +37,7 @@
             { "question": "How long does the process take?", "answer": "Once you submit your application at a live event, you will receive a response almost instantly. When approved, your new loan will be processed and finalized the same day.", "showing": false },
             { "question": "What's my interest rate and term on my new loan?", "answer": "Your interest rate and term will vary based on the lender you're matched with.", "showing": false },
             { "question": "I have bad credit. Can I still apply?", "answer": "Yes. Many lenders specialize in providing loans to people who receive various types of benefits such as Social Security, Retirement or Veteran's Benefits.", "showing": false },
-            { "question": "How is my private information protected?", "answer": "TestYour information is encrypted and securely transmitted to the lender, who then decides whether to fund your loan. ", "showing": false },
+            { "question": "How is my private information protected?", "answer": "Your information is encrypted and securely transmitted to the lender, who then decides whether to fund your loan. ", "showing": false },
             { "question": "I don't have an auto loan. Can you help me get one?", "answer": "Absolutely. We work with over 40 different local and nationwide lenders that will provide a program that fits your current financial situation.", "showing": false },
             { "question": "What if I no longer want my car and would like to trade it in?", "answer": "If you would like to trade out of your car we will align you with one of our local dealer partners to find you the vehicle you love!", "showing": false },
             { "question": "I have a lease. Can you still Fix My Loan?", "answer": "Yes. A lease is just another form of auto loan. We specialize in both conventional and lease financing. ", "showing": false }
@@ -88,7 +88,7 @@
 
         ];
 
-        vm.autos1 = [
+        vm.autos = [
             "acura.png",
             "audi.png",
             "bmw.png",
@@ -98,10 +98,7 @@
             "chrysler.png",
             "dodge.png",
             "fiat.png",
-            "ford.png"
-        ];
-
-        vm.autos2 = [
+            "ford.png",
             "gmc.png",
             "honda.png",
             "hyundai.png",
@@ -111,10 +108,7 @@
             "landrover.png",
             "lexus.png",
             "lincoln.png",
-            "mazda.png"
-        ];
-
-        vm.autos3 = [
+            "mazda.png",
             "mercedes.png",
             "mini.png",
             "mitsubishi.png",
@@ -124,7 +118,7 @@
             "subaru.png",
             "toyota.png",
             "volvo.png",
-            "vw.png",
+            "vw.png"
         ];
 
         vm.States = [
