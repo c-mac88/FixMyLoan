@@ -64,10 +64,6 @@ p {
     color: rgba(255, 255, 255, 0.7);
 }
 
-section {
-    padding: 100px 0;
-}
-
 aside {
     padding: 50px 0;
 }
@@ -174,6 +170,8 @@ header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/header.jpg');
     text-align: center;
     color: white;
+    margin-top: 60px;
+    margin-bottom: 0;
 }
 
 header .header-content {
@@ -185,7 +183,7 @@ header .header-content {
 
 header .header-content .header-content-inner h2 {
     font-weight: 700;
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 header .header-content .header-content-inner hr {
@@ -193,9 +191,16 @@ header .header-content .header-content-inner hr {
 }
 
 header .header-content .header-content-inner h3 {
-    font-weight: 600;
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 50px;
+    margin-bottom: 55px;
+}
+
+header .header-content .header-content-inner h4 {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 @media (min-width: 768px) {
@@ -468,11 +473,6 @@ body {
     font-size: .7em;
 }
 
-section {
-    padding-top: 30px;
-    padding-bottom: 50px;
-}
-
 #about {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/about.jpg);
     padding: 50px;
@@ -490,64 +490,131 @@ section {
 }
 
 #readyToBegin {
-    padding:20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 a {
-    cursor:pointer;
+    cursor: pointer;
 }
 
-    padding:50px;
-}
+padding:50px;
 
+}
 #banks {
     background-image: url("../img/banks.png");
-} 
-
+}
 #FAQbody {
-    cursor:pointer;
-    padding:0;
+    cursor: pointer;
+    padding: 0;
 }
-
 #creditPanel {
-    margin: 15px;
+    margin: 15px 15px 30px 15px;
+    padding: 0px;
 }
-
-#creditPanel {
-    padding:0px;
+#creditPanel h4 {
+    opacity: .9;
 }
-
+#creditPanel span {
+    color: green;
+}
 #howItWorksNumber {
-    border: solid blue 2px round;
+    border-radius: 50%;
+    height: 33px;
+    width: 33px;
+    border: solid #4caf50 2px;
+    padding: 5px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
 }
-
+#howItWorks h4 {
+    color: rgba(0, 0, 0, 0.65);
+}
 #howItWorks h3 {
     text-align: center;
-    padding:10px;
+    padding: 10px;
 }
-
 #commonQuestions h3 {
     text-align: center;
-    padding:10px;
+    padding: 10px;
 }
-
 #mcafee {
     background-image: url(../img/mcafee.png);
     padding: 20px;
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 #norton {
     background-image: url(../img/norton.png);
     padding: 20px;
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 #truste {
     background-image: url(../img/truste.png);
     padding: 20px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+#LOGO {
+    background-image: url(../img/LOGO.png);
+    padding: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#autoLogos {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#reviews {
+    background-color: rgba(76, 175, 80, 0.85);
+    height: 750px;
+    overflow: scroll;
+}
+#reviews h4 {
+    padding-top: 10px;
+}
+#answer {
+    color: #4caf50;
+}
+#howItWorks h3 {
+    color: #4caf50;
+}
+#commonQuestions h3 {
+    color: #4caf50;
+}
+#reviewsBody {
+    color: white;
+}
+#navLogo {
+    float: left;
+    padding: 8px 8px 8px 0;
+}
+#Disclaimer {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#Disclaimer p {
+    font-size: .75em;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+}
+#bottomPanel img{
+    size: contain;
+}
+
+#bottomPanel {
+    padding:0;
+}
+
+#registrationModal {
+    margin-top: 5%;
+}
+
+#registrationModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.0);
+    color:white;
+}
+
+#registrationModal .modal-body {
+    background-color: rgba(0, 0, 0, 0.0);
 }
