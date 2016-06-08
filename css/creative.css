@@ -530,3 +530,24 @@ a {
     text-align: center;
     padding:10px;
 }
+
+#mcafee {
+    background-image: url(../img/mcafee.png);
+    padding: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#norton {
+    background-image: url(../img/norton.png);
+    padding: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#truste {
+    background-image: url(../img/truste.png);
+    padding: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
