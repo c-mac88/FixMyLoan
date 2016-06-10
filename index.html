@@ -178,9 +178,6 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#meetTheTeam">Meet The Team</a>
-                    </li>
-                    <li>
                         <a id="ApplyNowTopRight" class="page-scroll" href="#readyToBegin">Apply Now</a>
                     </li>
                 </ul>
@@ -194,11 +191,12 @@
             <div class="header-content-inner">
                 <div class="col col-xs-12">
                     <div id="LOGOwhite" class="container col-sm-12 col-md-4 col-md-offset-4">
+                        <img src="img/whiteLOGO.png" width=100%>
                     </div>
                 </div>
                 <h2>Stop over-paying for your car!</h2>
                 <h3>Interest rate over 2.9%?</h3>
-                <button id="applyNowButton" a data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
+                <button id="applyNowButton" data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                 <p>Fast | Secure | $0 to Apply</p>
                 <h4>Contact us at <u>800-769-7175</u></h4>
                 <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
@@ -215,9 +213,9 @@
             </div>
         </div>
     </header>
-    <section id="autoLogos">
-        <div class="row">
-            <div ng-repeat="auto in vm.autos" class="container col-xs-2 col-md-1"><img height="80px" src="img/{{auto}}"></div>
+    <section>
+        <div id="banks" class="container col-xs-12">
+            <img src="img/banks.png" width=100%>
         </div>
     </section>
     <section>
@@ -298,7 +296,7 @@
                     </div>
                     <div id="readyToBegin" class="col-xs-12 text-center">
                         <h2 class="section-heading">Ready To Begin?</h2>
-                        <button id="applyNowButton" ng-click="vm.test()" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
+                        <button id="applyNowButton"  data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -344,12 +342,9 @@
             </div>
         </div>
     </section> -->
+
     <section>
-        <div id="banks" class="container col-xs-12">
-        </div>
-    </section>
-    <section>
-        <div id="Disclaimer" class="container col-xs-12">
+        <div id="Disclaimer" class="container col-xs-12 text-center">
             <p>FIXMYLOAN, LLC, THE OPERATOR OF THIS SITE IS NOT AN AUTOMOTIVE LENDER AND DOES NOT MAKE AUTO LOANS OR CREDIT DECISIONS. FixMyLoan.net provides a matching service only and is not acting as a representative, agent, or correspondent for any service provider or automobile lender. FixMyLoan, LLC does not endorse any particular auto lender or auto loan product. You are under no obligation to use FixMyLoan.net’s service to initiate contact or apply for credit with any lender. Consumers submitting information to FixMyLoan.net incur no cost. FixMyLoan.net does not provide automobile financing directly to consumers. Based on the application consumers submit, FixMyLoan.net utilizes its network of conventional auto lenders to pair consumers with the automotive lender and auto loan ideally suited to their needs. The loan fees and interest rates are determined solely by the lender to which the consumer is matched, with specific amounts determined based upon the application information submitted. FixMyLoan.net has no bearing on the determination of these fee amounts and interest rates. FixMyLoan.net does not guarantee that submitting information will result in you being matched with a lender, being offered a loan with satisfactory rates or terms, or receiving a loan from a lender. You will not be charged any fees to use FixMyLoan.net’s service.</p>
         </div>
     </section>

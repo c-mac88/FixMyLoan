@@ -21,9 +21,105 @@
 
 
 
+
+
+            // // ref: http://stackoverflow.com/a/1293163/2343
+            // // This will parse a delimited string into an array of
+            // // arrays. The default delimiter is the comma, but this
+            // // can be overriden in the second argument.
+            // function CSVToArray(strData, strDelimiter) {
+            //     // Check to see if the delimiter is defined. If not,
+            //     // then default to comma.
+            //     strDelimiter = (strDelimiter || ",");
+
+            //     // Create a regular expression to parse the CSV values.
+            //     var objPattern = new RegExp(
+            //         (
+            //             // Delimiters.
+            //             "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+            //             // Quoted fields.
+            //             "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+            //             // Standard fields.
+            //             "([^\"\\" + strDelimiter + "\\r\\n]*))"
+            //         ),
+            //         "gi"
+            //     );
+
+
+            //     // Create an array to hold our data. Give the array
+            //     // a default empty first row.
+            //     var arrData = [
+            //         []
+            //     ];
+
+            //     // Create an array to hold our individual pattern
+            //     // matching groups.
+            //     var arrMatches = null;
+
+
+            //     // Keep looping over the regular expression matches
+            //     // until we can no longer find a match.
+            //     while (arrMatches = objPattern.exec(strData)) {
+
+            //         // Get the delimiter that was found.
+            //         var strMatchedDelimiter = arrMatches[1];
+
+            //         // Check to see if the given delimiter has a length
+            //         // (is not the start of string) and if it matches
+            //         // field delimiter. If id does not, then we know
+            //         // that this delimiter is a row delimiter.
+            //         if (
+            //             strMatchedDelimiter.length &&
+            //             strMatchedDelimiter !== strDelimiter
+            //         ) {
+
+            //             // Since we have reached a new row of data,
+            //             // add an empty row to our data array.
+            //             arrData.push([]);
+
+            //         }
+
+            //         var strMatchedValue;
+
+            //         // Now that we have our delimiter out of the way,
+            //         // let's check to see which kind of value we
+            //         // captured (quoted or unquoted).
+            //         if (arrMatches[2]) {
+
+            //             // We found a quoted value. When we capture
+            //             // this value, unescape any double quotes.
+            //             strMatchedValue = arrMatches[2].replace(
+            //                 new RegExp("\"\"", "g"),
+            //                 "\""
+            //             );
+
+            //         } else {
+
+            //             // We found a non-quoted value.
+            //             strMatchedValue = arrMatches[3];
+
+            //         }
+
+
+            //         // Now that we have our value string, let's add
+            //         // it to the data array.
+            //         arrData[arrData.length - 1].push(strMatchedValue);
+            //     }
+
+            //     // Return the parsed data.
+            //     return (arrData);
+            // }
+
+
+
+
+
+
         vm.Submit = function() {
             var data = vm.Entry;
-            alert(["State:" + data.State, "Rate:" + data.Rate, "First:" + data.FirstName, "Last:" + data.LastName, "Email:" + data.EmailAddress, "Phone:" + data.PhoneNumber, "Zip Code:" + data.ZipCode]);
+            alert("This is a test. Hey, " + data.FirstName + " how is the weather in " + data.State + "?");
         };
 
 
@@ -44,10 +140,6 @@
         ];
 
         vm.reviews = [{
-                "title": "Super Service",
-                "text": "My experience was very positive. The website was user friendly and fast. Although there was an error transferring the information on my page to the lender, they called before I could physically log in to their website. They told me exactly what to do and followed through with processing on the next business day exactly like they said they would. I will definitely use creditloan.com again.",
-                "name": "Traci"
-            }, {
                 "title": "Greg is the best!",
                 "text": "He worked with me to get out of my high car payment.",
                 "name": "Ashley"
@@ -71,19 +163,7 @@
                 "title": "I feel educated",
                 "text": "I didn't end up fixing my loan because I was so close to the end, but Josh really helped me understand the ins and outs of credit.",
                 "name": "Anthony"
-            }, {
-                "title": "Fast",
-                "text": "Quick process.",
-                "name": "Rick"
-            }, {
-                "title": "This really works!",
-                "text": "I really couldn't believe how easy this was.  I was kicking myself for not having done it sooner.",
-                "name": "Jessica"
-            }, {
-                "title": "Payment went down $126!",
-                "text": "The guys at FixMyLoan are car loan ninjas.",
-                "name": "Patrick"
-            },
+            }
 
 
         ];

@@ -501,9 +501,7 @@ a {
 padding:50px;
 
 }
-#banks {
-    background-image: url("../img/banks.png");
-}
+
 #FAQbody {
     cursor: pointer;
     padding: 0;
@@ -557,8 +555,8 @@ padding:50px;
     background-size: contain;
     background-repeat: no-repeat;
 }
-#LOGOwhite {
-    background-image: url(../img/LOGOwhite.png);
+#LOGO {
+    background-image: url(../img/LOGO.png);
     padding: 100px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -569,8 +567,7 @@ padding:50px;
 }
 #reviews {
     background-color: rgba(76, 175, 80, 0.85);
-    height: 1000px;
-    overflow: scroll;
+    height: 1200px;
 }
 #reviews h4 {
     padding-top: 10px;
@@ -596,6 +593,7 @@ padding:50px;
 }
 #Disclaimer {
     background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 #Disclaimer p {
     font-size: .75em;
@@ -624,12 +622,9 @@ padding:50px;
 #about {
     text-align: left;
 }
-#banks {
-    background-image: url(../img/banks.png);
-    padding: 100px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 #autoLogos {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+
