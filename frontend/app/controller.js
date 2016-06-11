@@ -118,7 +118,6 @@
 
 
         vm.Submit = function() {
-            console.log(vm.Entry);
             var data = vm.Entry;
             CarFactory.postUser(data).then(
             function(response) {
