@@ -81,8 +81,8 @@
                         <form ng-show=vm.a2 role="form">
                             <div class="form-group">
                                 <label for="selectInterestRate">What is your current Interest Rate?</label>
-                                <select ng-model="vm.Entry.Rate" class="form-control" id="selectInterestRate">
-                                    <option ng-repeat="rate in vm.Rates">{{rate}}%</option>
+                                <select ng-model="vm.Entry.InterestRate" class="form-control" id="selectInterestRate">
+                                    <option ng-repeat="rate in vm.Rates">{{rate}}</option>
                                     <option>Not Sure</option>
                                 </select>
                             </div>
@@ -116,36 +116,36 @@
                         <form ng-show=vm.a4 role="form">
                             <div class="form-group">
                                 <label for="year">Year:</label>
-                                <select ng-model="vm.Entry.VehicleYear" class="form-control" id="year">
-                                    <option>Years</option>
+                                <select ng-model="vm.Entry.CarYear" class="form-control" id="year">
+                                    <option>2016<section>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="make">Make:</label>
-                                <select ng-model="vm.Entry.VehicleMake" class="form-control" id="make">
-                                    <option>Makes</option>
+                                <select ng-model="vm.Entry.CarMake" class="form-control" id="make">
+                                    <option>Make</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="model">Model:</label>
-                                <select ng-model="vm.Entry.VehicleModel" class="form-control" id="model">
-                                    <option>Models</option>
+                                <select ng-model="vm.Entry.CarModel" class="form-control" id="model">
+                                    <option>Model</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="miles">Miles:</label>
-                                <select ng-model="vm.Entry.VehicleMiles" class="form-control" id="miles">
-                                    <option>Miles</option>
+                                <select ng-model="vm.Entry.CarMiles" class="form-control" id="miles">
+                                    <option>50000</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="monthlyPayment">Current Monthly Payment:</label>
-                                <select ng-model="vm.Entry.MonthlyPayment" class="form-control" id="monthlyPayment">
-                                    <option>Monthly Payment Options</option>
+                                <select ng-model="vm.Entry.CarMonthlyPayment" class="form-control" id="monthlyPayment">
+                                    <option>1000</option>
                                 </select>
                             </div>
                             <button ng-click="vm.a4=false; vm.a3=true" type="submit" class="btn btn-default">Back</button>
-                            <button ng-click=vm.Submit() type="submit" class="btn btn-default">Submit</button>
+                            <button ng-click=vm.Submit() type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -363,6 +363,7 @@
     <script src="js/creative.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controller.js"></script>
+    <script src="app/factory.js"></script>
 </body>
 
 </html>

@@ -5,10 +5,10 @@
         .module('app')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = [];
+    MainCtrl.$inject = ['CarFactory', '$log'];
 
     /* @ngInject */
-    function MainCtrl() {
+    function MainCtrl(CarFactory, $log) {
 
         //using vm
         var vm = this;
@@ -118,15 +118,16 @@
 
 
         vm.Submit = function() {
+            console.log(vm.Entry);
             var data = vm.Entry;
-            alert("This is a test. Hey, " + data.FirstName + " how is the weather in " + data.State + "?");
-        };
-
-
-
-        vm.test = function() {
-            console.log("Nice");
-        }
+            CarFactory.postUser(data).then(
+            function(response) {
+                console.log(response.data);
+            },
+            function(error) {
+                $log(error);
+            }
+        )};
 
 
         vm.FAQ = [{ "question": "Does it cost anything to apply?", "answer": "No. there is no cost to apply.", "showing": false },
@@ -168,38 +169,7 @@
 
         ];
 
-        vm.autos = [
-            "acura.png",
-            "audi.png",
-            "bmw.png",
-            "buick.png",
-            "cadillac.png",
-            "chevy.png",
-            "chrysler.png",
-            "dodge.png",
-            "fiat.png",
-            "ford.png",
-            "gmc.png",
-            "honda.png",
-            "hyundai.png",
-            "infiniti.png",
-            "jeep.png",
-            "kia.png",
-            "landrover.png",
-            "lexus.png",
-            "lincoln.png",
-            "mazda.png",
-            "mercedes.png",
-            "mini.png",
-            "mitsubishi.png",
-            "nissan.png",
-            "ram.png",
-            "scion.png",
-            "subaru.png",
-            "toyota.png",
-            "volvo.png",
-            "vw.png"
-        ];
+    
 
         vm.States = [
 
@@ -252,8 +222,8 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"
+            ];
 
-        ];
 
         vm.Rates = [];
 
