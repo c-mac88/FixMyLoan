@@ -5,13 +5,16 @@
         .module('app')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['CarFactory', '$log'];
+    MainCtrl.$inject = ['RegistrationFactory', '$http'];
 
     /* @ngInject */
-    function MainCtrl(CarFactory, $log) {
-
-        //using vm
+    function MainCtrl(RegistrationFactory, $http) {
         var vm = this;
+        vm.years = [];
+
+        for (var i = 0; i < 18; i++) {
+            vm.years.push(1999 + i)
+        };
 
         vm.a1 = true;
         vm.a2 = false;
@@ -19,114 +22,117 @@
         vm.a4 = false;
 
 
+        vm.next = function() {
+            if (vm.Entry.State == null) {
+                alert("Invalid Response, please try again.");
+            } else {
+                vm.a1 = false;
+                vm.a2 = true;
+            }
+        };
+
+        vm.next2 = function() {
+            if (vm.Entry.InterestRate == null) {
+                alert("Invalid Response, please try again.");
+            } else {
+                vm.a2 = false;
+                vm.a3 = true;
+            }
+        };
+
+        vm.next3 = function() {
+            if (vm.Entry.FirstName == null | vm.Entry.LastName == null | vm.Entry.EmailAddress == null | vm.Entry.PhoneNumber == null | vm.Entry.ZipCode == null) {
+                alert("Invalid Response, please try again.");
+            } else {
+                vm.a3 = false;
+                vm.a4 = true;
+            }
+        };
+
+        vm.getMakes = function(year) {
+            vm.Entry.CarModel = "";
+            vm.Entry.CarMake = "";
+            vm.Models = [];
+            vm.Makes = [];
+            $http.get('../autos.json')
+                .then(function(response) {
+                    vm.autos = response.data;
+
+                    for (var i = 0; i < vm.autos.length; i++) {
+                        var exists = contains.call(vm.Makes, vm.autos[i].model_make_id);
+                        if (vm.autos[i].model_year == year && !exists) {
+                            vm.Makes.push(vm.autos[i].model_make_id);
+                        } else {
+                            continue;
+                        }
+                    }
+
+
+                });
+
+        };
 
 
 
+        vm.getModels = function(make) {
+            vm.Entry.CarModel = "";
+            vm.Models = [];
+            for (var i = 0; i < vm.autos.length; i++) {
+                var exists = contains.call(vm.Models, vm.autos[i].model_name);
+                if (vm.autos[i].model_make_id == make && !exists) {
+                    vm.Models.push(vm.autos[i].model_name);
+                } else {
+                    continue;
+                }
+            }
 
-            // // ref: http://stackoverflow.com/a/1293163/2343
-            // // This will parse a delimited string into an array of
-            // // arrays. The default delimiter is the comma, but this
-            // // can be overriden in the second argument.
-            // function CSVToArray(strData, strDelimiter) {
-            //     // Check to see if the delimiter is defined. If not,
-            //     // then default to comma.
-            //     strDelimiter = (strDelimiter || ",");
+        };
 
-            //     // Create a regular expression to parse the CSV values.
-            //     var objPattern = new RegExp(
-            //         (
-            //             // Delimiters.
-            //             "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+        function contains(needle) {
+            // Per spec, the way to identify NaN is that it is not equal to itself
+            var findNaN = needle !== needle;
+            var indexOf;
 
-            //             // Quoted fields.
-            //             "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+            if (!findNaN && typeof Array.prototype.indexOf === 'function') {
+                indexOf = Array.prototype.indexOf;
+            } else {
+                indexOf = function(needle) {
+                    var i = -1,
+                        index = -1;
 
-            //             // Standard fields.
-            //             "([^\"\\" + strDelimiter + "\\r\\n]*))"
-            //         ),
-            //         "gi"
-            //     );
+                    for (i = 0; i < this.length; i++) {
+                        var item = this[i];
 
+                        if ((findNaN && item !== item) || item === needle) {
+                            index = i;
+                            break;
+                        }
+                    }
 
-            //     // Create an array to hold our data. Give the array
-            //     // a default empty first row.
-            //     var arrData = [
-            //         []
-            //     ];
+                    return index;
+                };
+            }
 
-            //     // Create an array to hold our individual pattern
-            //     // matching groups.
-            //     var arrMatches = null;
-
-
-            //     // Keep looping over the regular expression matches
-            //     // until we can no longer find a match.
-            //     while (arrMatches = objPattern.exec(strData)) {
-
-            //         // Get the delimiter that was found.
-            //         var strMatchedDelimiter = arrMatches[1];
-
-            //         // Check to see if the given delimiter has a length
-            //         // (is not the start of string) and if it matches
-            //         // field delimiter. If id does not, then we know
-            //         // that this delimiter is a row delimiter.
-            //         if (
-            //             strMatchedDelimiter.length &&
-            //             strMatchedDelimiter !== strDelimiter
-            //         ) {
-
-            //             // Since we have reached a new row of data,
-            //             // add an empty row to our data array.
-            //             arrData.push([]);
-
-            //         }
-
-            //         var strMatchedValue;
-
-            //         // Now that we have our delimiter out of the way,
-            //         // let's check to see which kind of value we
-            //         // captured (quoted or unquoted).
-            //         if (arrMatches[2]) {
-
-            //             // We found a quoted value. When we capture
-            //             // this value, unescape any double quotes.
-            //             strMatchedValue = arrMatches[2].replace(
-            //                 new RegExp("\"\"", "g"),
-            //                 "\""
-            //             );
-
-            //         } else {
-
-            //             // We found a non-quoted value.
-            //             strMatchedValue = arrMatches[3];
-
-            //         }
-
-
-            //         // Now that we have our value string, let's add
-            //         // it to the data array.
-            //         arrData[arrData.length - 1].push(strMatchedValue);
-            //     }
-
-            //     // Return the parsed data.
-            //     return (arrData);
-            // }
-
-
+            return indexOf.call(this, needle) > -1;
+        };
 
 
 
 
         vm.Submit = function() {
-            var data = vm.Entry;
-            CarFactory.postUser(data).then(
-            function(response) {
-                console.log(response.data);
-            },
-            function(error) {
-                $log(error);
+            if (vm.Entry.CarYear == null | vm.Entry.CarMake == null | vm.Entry.CarModel == null | vm.Entry.CarMiles == null | vm.Entry.CarMonthlyPayment == null) {
+                alert("Invalid Response, please try again.");
+            } else {
+                RegistrationFactory.postUser(vm.Entry).then(
+                    function(response) {
+                        console.log(response.data);
+                    },
+                    function(error) {
+                        console.log(error);
+                    });
             }
-        )};
+
+        };
 
 
         vm.FAQ = [{ "question": "Does it cost anything to apply?", "answer": "No. there is no cost to apply.", "showing": false },
@@ -168,7 +174,7 @@
 
         ];
 
-    
+
 
         vm.States = [
 
@@ -221,7 +227,7 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"
-            ];
+        ];
 
 
         vm.Rates = [];

@@ -634,3 +634,14 @@ padding:50px;
 #banks {
     margin-top: 20px;
 }
+#socialMedia {
+    margin-top: 5px;
+}
+
+#socialMedia div {
+    padding:5px;
+}
+
+#applyNowButton {
+    font-size: 2em;
+}
