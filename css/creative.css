@@ -627,4 +627,21 @@ padding:50px;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+#contactUs {
+   color: #f05f40;
+}
 
+#banks {
+    margin-top: 20px;
+}
+#socialMedia {
+    margin-top: 5px;
+}
+
+#socialMedia div {
+    padding:5px;
+}
+
+#applyNowButton {
+    font-size: 2em;
+}

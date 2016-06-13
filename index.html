@@ -7,14 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>FML</title>
+    <title>Fix My Loan</title>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-78225412-1', 'auto');
+    ga('send', 'pageview');
+    </script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Cabin:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <!-- Custom CSS -->
@@ -38,7 +53,7 @@
                         <h4 class="modal-title">Privacy Policy</h4>
                     </div>
                     <div class="modal-body">
-                        <p></p>
+                        <img src="img/FMLprivacy.jpg" width=100%>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -55,7 +70,7 @@
                         <h4 class="modal-title">Terms of Website Use</h4>
                     </div>
                     <div class="modal-body">
-                        <p></p>
+                        <img src="img/FMLterms.jpg" width=100%>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -76,18 +91,18 @@
                                     <option ng-repeat="state in vm.States">{{state}}</option>
                                 </select>
                             </div>
-                            <button ng-click="vm.a1=false; vm.a2=true" type="submit" class="btn btn-default">Next</button>
+                            <button ng-click="vm.next()" type="submit" class="btn btn-default">Next</button>
                         </form>
                         <form ng-show=vm.a2 role="form">
                             <div class="form-group">
                                 <label for="selectInterestRate">What is your current Interest Rate?</label>
                                 <select ng-model="vm.Entry.InterestRate" class="form-control" id="selectInterestRate">
-                                    <option ng-repeat="rate in vm.Rates">{{rate}}</option>
+                                    <option ng-repeat="rate in vm.Rates" value=rate>{{rate}}%</option>
                                     <option>Not Sure</option>
                                 </select>
                             </div>
                             <button ng-click="vm.a2=false; vm.a1=true" type="submit" class="btn btn-default">Back</button>
-                            <button ng-click="vm.a2=false; vm.a3=true" type="submit" class="btn btn-default">Next</button>
+                            <button ng-click="vm.next2()" type="submit" class="btn btn-default">Next</button>
                         </form>
                         <form ng-show=vm.a3 role="form">
                             <div class="form-group">
@@ -111,41 +126,38 @@
                                 <input ng-model="vm.Entry.ZipCode" type="int" class="form-control" id="zipCode" placeholder="Zip Code" />
                             </div>
                             <button ng-click="vm.a3=false; vm.a2=true" type="submit" class="btn btn-default">Back</button>
-                            <button ng-click="vm.a3=false; vm.a4=true" type="submit" class="btn btn-default">Next</button>
+                            <button ng-click="vm.next3()" type="submit" class="btn btn-default">Next</button>
                         </form>
                         <form ng-show=vm.a4 role="form">
+                            <div>Vehicle Information: </div>
                             <div class="form-group">
                                 <label for="year">Year:</label>
                                 <select ng-model="vm.Entry.CarYear" class="form-control" id="year">
-                                    <option>2016<section>
+                                    <option ng-click="vm.getMakes(year)" ng-repeat="year in vm.years">{{year}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="make">Make:</label>
                                 <select ng-model="vm.Entry.CarMake" class="form-control" id="make">
-                                    <option>Make</option>
+                                    <option ng-click="vm.getModels(make)" ng-repeat="make in vm.Makes">{{make}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="model">Model:</label>
                                 <select ng-model="vm.Entry.CarModel" class="form-control" id="model">
-                                    <option>Model</option>
+                                    <option ng-repeat="model in vm.Models">{{model}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="miles">Miles:</label>
-                                <select ng-model="vm.Entry.CarMiles" class="form-control" id="miles">
-                                    <option>50000</option>
-                                </select>
+                                <input ng-model="vm.Entry.CarMiles" type="text" class="form-control" id="miles" placeholder="Approximate Mileage" />
                             </div>
                             <div class="form-group">
                                 <label for="monthlyPayment">Current Monthly Payment:</label>
-                                <select ng-model="vm.Entry.CarMonthlyPayment" class="form-control" id="monthlyPayment">
-                                    <option>1000</option>
-                                </select>
+                                <input ng-model="vm.Entry.CarMonthlyPayment" type="text" class="form-control" id="monthlyPayment" placeholder="Current Monthly Payment" />
                             </div>
                             <button ng-click="vm.a4=false; vm.a3=true" type="submit" class="btn btn-default">Back</button>
-                            <button ng-click=vm.Submit() type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                            <button ng-click="vm.Submit()" type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -187,10 +199,30 @@
         <!-- /.container-fluid -->
     </nav>
     <header>
+        <div id="socialMedia" class="container row col-xs-3 col-xs-offset-9">
+            <div class="col-xs-2">
+                <a href="https://www.facebook.com/Fixmyloan/" target="_blank"><img src="img/facebook.png" width=100%></a>
+            </div>
+            <div class="col-xs-2">
+                <a href="https://www.twitter.com/fixmyloan/" target="_blank"><img src="img/twitter.png" width=100%></a>
+            </div>
+            <div class="col-xs-2">
+                <a href="https://www.instagram.com/fixmyloan/" target="_blank"><img src="img/instagram.png" width=100%></a>
+            </div>
+            <div class="col-xs-2">
+                <a href="https://www.plus.google.com/116609984616434544451/" target="_blank"><img src="img/googleplus.png" width=100%></a>
+            </div>
+            <div class="col-xs-2">
+                <a href="http://www.yelp.com" target="_blank"><img src="img/yelp.png" width=100%></a>
+            </div>
+            <div class="col-xs-2">
+                <a href="http://www.youtube.com" target="_blank"><img src="img/youtube.png" width=100%></a>
+            </div>
+        </div>
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="col col-xs-12">
-                    <div id="LOGOwhite" class="container col-sm-12 col-md-4 col-md-offset-4">
+                    <div id="LOGOwhite" class="container col-xs-12 col-sm-4 col-sm-offset-4">
                         <img src="img/whiteLOGO.png" width=100%>
                     </div>
                 </div>
@@ -198,24 +230,17 @@
                 <h3>Interest rate over 2.9%?</h3>
                 <button id="applyNowButton" data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                 <p>Fast | Secure | $0 to Apply</p>
-                <h4>Contact us at <u>800-769-7175</u></h4>
-                <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
-                    <div class="row">
-                        <div id="mcafee" class="col-xs-4"></div>
-                        <div id="norton" class="col-xs-4"></div>
-                        <div id="truste" class="col-xs-4"></div>
-                    </div>
-                </div>
+                <h5> Contact us at <u>800-769-7175</u></h5>
                 <div class="container col-xs-12 col-md-6 col-md-offset-3">
                     <br>
-                    <p id="privacyContent">By providing your information, you certify that you have read and agree to our <a data-toggle="modal" data-target="#privacyModal">Privacy Policy</a> and <a data-toggle="modal" data-target="#termsModal">Terms of Website Use</a>. See Rates and Fees. Questions? <a href="#commonQuestions">FAQ</a> or <a href="">Contact Us.</a></p>
+                    <p id="privacyContent">By providing your information, you certify that you have read and agree to our <a data-toggle="modal" data-target="#privacyModal">Privacy Policy</a> and <a data-toggle="modal" data-target="#termsModal">Terms of Website Use</a>. See Rates and Fees. Questions? <a href="#commonQuestions">FAQ</a> or <a data-toggle="modal" data-target="#registrationModal">Contact Us.</a></p>
                 </div>
             </div>
         </div>
     </header>
     <section>
-        <div id="banks" class="container col-xs-12">
-            <img src="img/banks.png" width=100%>
+        <div id="banks" class="container col-xs-12 text-center">
+            <img src="img/banks.png" width=90%>
         </div>
     </section>
     <section>
@@ -296,53 +321,12 @@
                     </div>
                     <div id="readyToBegin" class="col-xs-12 text-center">
                         <h2 class="section-heading">Ready To Begin?</h2>
-                        <button id="applyNowButton"  data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
+                        <button id="applyNowButton" data-toggle="modal" data-target="#registrationModal" class="btn btn-primary btn-xl page-scroll">Apply Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--     <section>
-        <div class="container col-xs-12">
-            <div class="panel panel-default col-xs-6">
-                <div class="panel-body">
-                    <a>Test</a>
-                    <a>Test</a>
-                    <a>test</a>
-                    <a>Test</a>
-                    <a>Test</a>
-                </div>
-            </div>
-            <div class="panel panel-default col-xs-6">
-                <div class="panel-body">
-                    <a>Test</a>
-                    <a>Test</a>
-                    <a>test</a>
-                    <a>Test</a>
-                    <a>Test</a>
-                </div>
-            </div>
-            <div class="panel panel-default col-xs-6">
-                <div class="panel-body">
-                    <a>Test</a>
-                    <a>Test</a>
-                    <a>test</a>
-                    <a>Test</a>
-                    <a>Test</a>
-                </div>
-            </div>
-            <div class="panel panel-default col-xs-6">
-                <div class="panel-body">
-                    <a>Test</a>
-                    <a>Test</a>
-                    <a>test</a>
-                    <a>Test</a>
-                    <a>Test</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <section>
         <div id="Disclaimer" class="container col-xs-12 text-center">
             <p>FIXMYLOAN, LLC, THE OPERATOR OF THIS SITE IS NOT AN AUTOMOTIVE LENDER AND DOES NOT MAKE AUTO LOANS OR CREDIT DECISIONS. FixMyLoan.net provides a matching service only and is not acting as a representative, agent, or correspondent for any service provider or automobile lender. FixMyLoan, LLC does not endorse any particular auto lender or auto loan product. You are under no obligation to use FixMyLoan.net’s service to initiate contact or apply for credit with any lender. Consumers submitting information to FixMyLoan.net incur no cost. FixMyLoan.net does not provide automobile financing directly to consumers. Based on the application consumers submit, FixMyLoan.net utilizes its network of conventional auto lenders to pair consumers with the automotive lender and auto loan ideally suited to their needs. The loan fees and interest rates are determined solely by the lender to which the consumer is matched, with specific amounts determined based upon the application information submitted. FixMyLoan.net has no bearing on the determination of these fee amounts and interest rates. FixMyLoan.net does not guarantee that submitting information will result in you being matched with a lender, being offered a loan with satisfactory rates or terms, or receiving a loan from a lender. You will not be charged any fees to use FixMyLoan.net’s service.</p>
@@ -350,8 +334,8 @@
     </section>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/toastr.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Plugin JavaScript -->
